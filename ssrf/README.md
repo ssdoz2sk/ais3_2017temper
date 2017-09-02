@@ -32,10 +32,10 @@ file://index.php
 
 遇到一件事就是 Squid 架不起來，Google 了一下，放棄除錯改用 tinyproxy   
 
-這題模擬 cgi 的漏洞，程式到 `http://127.0.0.1/waf` 去判斷參數有沒有正確，這邊就有點問題了   
-其中 cgi 會把 header 的值變大寫並在前加入 `HTTP_` 的prefix，並加入環境變數   
-而 `HTTP_PROXY` 這環境變數存在則會通過該變數的代理伺服器   
-所以在發送請求時加入 proxy 這個 header 就是這題目的主要方法   
+這題模擬 cgi 的漏洞，程式到 `http://127.0.0.1/waf` 去判斷參數有沒有正確，這邊就有點問題了     
+其中 cgi 會把 header 的值變大寫並在前加入 `HTTP_` 的prefix，並加入環境變數      
+而 `HTTP_PROXY` 這環境變數存在則會通過該變數的代理伺服器       
+所以在發送請求時加入 proxy 這個 header 就是這題目的主要方法      
 
 ## cgi-bin
 ```
